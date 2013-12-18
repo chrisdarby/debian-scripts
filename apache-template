@@ -1,0 +1,22 @@
+<VirtualHost *:80>
+        ServerAdmin webmaster@#serverName#
+        ServerName #serverName#
+        ServerAlias www.#serverName#
+
+        DocumentRoot /home/#homeDir#/public_html
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /home/#homeDir#/public_html/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/#serverName#.error.log
+        LogLevel warn
+
+        CustomLog ${APACHE_LOG_DIR}/#serverName#.access.log combined
+</VirtualHost>
