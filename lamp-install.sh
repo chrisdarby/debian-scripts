@@ -16,7 +16,7 @@ sudo apt-get -y install pure-ftpd
 sudo apt-get -y install phpmyadmin
 
 wget https://raw.githubusercontent.com/salexis/debian-scripts/master/apache-template
-wget https://github.com/salexis/debian-scripts/blob/master/virtualhost-maker.sh
+wget https://raw.githubusercontent.com/salexis/debian-scripts/master/virtualhost-maker.sh
 
 cp apache-template /etc/apache2/sites-available/template
 cp virtualhost-maker.sh /usr/bin/makeweb
