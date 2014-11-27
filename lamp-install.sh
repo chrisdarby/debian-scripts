@@ -1,7 +1,4 @@
 #!/bin/bash
-SERVERNAME=$1
-
-export DEBIAN_FRONTEND=noninteractive
 sudo apt-get -y update
 sudo apt-get -y install mysql-server
 sudo apt-get -y install apache2
@@ -18,3 +15,5 @@ wget https://raw.githubusercontent.com/salexis/debian-scripts/master/virtualhost
 cp apache-template /etc/apache2/sites-available/template
 cp virtualhost-maker.sh /usr/bin/makeweb
 chmod 777 /usr/bin/makeweb
+
+cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
