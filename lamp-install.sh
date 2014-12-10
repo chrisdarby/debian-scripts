@@ -17,3 +17,4 @@ cp virtualhost-maker.sh /usr/bin/makeweb
 chmod 777 /usr/bin/makeweb
 
 cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
+service apache2 restart
