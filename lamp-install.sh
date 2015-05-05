@@ -8,14 +8,13 @@ apt-get -y install pure-ftpd
 apt-get -y install phpmyadmin
 apt-get -y install sendmail-bin
 apt-get -y install sendmail
-apt-get -y install git
 
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/virtualhost-maker.sh
 
 cp apache-template /etc/apache2/sites-available/template
-cp virtualhost-maker.sh /usr/bin/create-website
-chmod 777 /usr/bin/create-website
+cp virtualhost-maker.sh /usr/bin/mw
+chmod 777 /usr/bin/mw
 
 cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
 service apache2 restart
