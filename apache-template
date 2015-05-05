@@ -1,7 +1,6 @@
 <VirtualHost *:80>
         ServerAdmin webmaster@#serverName#
         ServerName #serverName#
-        ServerAlias www.#serverName#
 
         DocumentRoot /home/#homeDir#/public_html
         <Directory />
