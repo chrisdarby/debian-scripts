@@ -11,7 +11,7 @@
         <Directory /home/#homeDir#/public_html/>
                 Options Indexes FollowSymLinks MultiViews
                 AllowOverride All
-                Order allow,deny
+                Require all granted
                 allow from all
         </Directory>
 
