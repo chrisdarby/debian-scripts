@@ -10,8 +10,8 @@ apt-get -y install sendmail-bin
 apt-get -y install sendmail
 apt-get -y install git
 
-wget https://raw.githubusercontent.com/salexis/debian-scripts/master/apache-template
-wget https://raw.githubusercontent.com/salexis/debian-scripts/master/virtualhost-maker.sh
+wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template
+wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/virtualhost-maker.sh
 
 cp apache-template /etc/apache2/sites-available/template
 cp virtualhost-maker.sh /usr/bin/create-website
