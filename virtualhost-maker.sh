@@ -14,8 +14,8 @@ sed -i "s/$OLDHOME/$USER/g" /etc/apache2/sites-enabled/$SERVERNAME
 adduser $USER
 mkdir -p /home/$USER/public_html
 
-sudo chown -R $USER:$USER /home/$USER/public_html
-sudo chmod 755 /home/$USER/public_html
+chown -R $USER:$USER /home/$USER/public_html
+chmod 755 /home/$USER/public_html
 
 echo "$SERVERNAME" >  /home/$USER/public_html/index.html
 
