@@ -8,6 +8,7 @@ apt-get -y install pure-ftpd
 apt-get -y install phpmyadmin
 apt-get -y install sendmail-bin
 apt-get -y install sendmail
+apt-get -y install unzip
 
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/virtualhost-maker.sh
