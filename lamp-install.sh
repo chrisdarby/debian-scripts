@@ -19,4 +19,8 @@ cp virtualhost-maker.sh /usr/bin/mw
 chmod 777 /usr/bin/mw
 
 cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
+
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+
 service apache2 restart
