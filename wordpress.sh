@@ -25,7 +25,6 @@ cd /tmp/wordpress
 cp -rf * /home/$USER/public_html/
 
 chmod 777 -Rf /home/$USER/public_html
-echo "create database wp_$homeDir" | mysql -u root -p
 
 cd /home/$USER
 rm -rf /tmp/wordpress
