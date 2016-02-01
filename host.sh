@@ -6,7 +6,7 @@ OLDHOME=#homeDir#
 
 
 echo "Creating profile for $SERVERNAME"
-cp /etc/apache2/sites-available/template /etc/apache2/sites-enabled/$SERVERNAME.conf
+cp /etc/apache2/sites-available/template-standard /etc/apache2/sites-enabled/$SERVERNAME.conf
 sed -i "s/$OLDSTR/$SERVERNAME/g" /etc/apache2/sites-enabled/$SERVERNAME.conf
 sed -i "s/$OLDHOME/$USER/g" /etc/apache2/sites-enabled/$SERVERNAME.conf
 
