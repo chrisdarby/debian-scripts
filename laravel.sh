@@ -4,12 +4,13 @@ USER=$2
 APP=$3
 OLDSTR=#serverName#
 OLDHOME=#homeDir#
-
+OLDAPP=#laravelApp#
 
 echo "Creating profile for $SERVERNAME"
 cp /etc/apache2/sites-available/template-laravel /etc/apache2/sites-enabled/$SERVERNAME.conf
 sed -i "s/$OLDSTR/$SERVERNAME/g" /etc/apache2/sites-enabled/$SERVERNAME.conf
 sed -i "s/$OLDHOME/$USER/g" /etc/apache2/sites-enabled/$SERVERNAME.conf
+sed -i "s/$OLDAPP/$APP/g" /etc/apache2/sites-enabled/$SERVERNAME.conf
 
 adduser $USER
 mkdir -p /home/$USER/public_html
