@@ -12,12 +12,18 @@ apt-get -y install sendmail
 apt-get -y install unzip
 apt-get -y install git
 
+wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/laravel-template
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template
-wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/virtualhost-maker.sh
+wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/host.sh
 
 cp apache-template /etc/apache2/sites-available/template
-cp virtualhost-maker.sh /usr/bin/mw
-chmod 777 /usr/bin/mw
+cp laravel-template /etc/apache2/sites-available/template-laravel
+
+cp host.sh /usr/bin/make-host
+cp laravel.sh /usr/bin/make-laravel
+
+chmod 777 /usr/bin/make-host
+chmod 777 /usr/bin/make-laravel
 
 cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
 
