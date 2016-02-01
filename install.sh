@@ -14,15 +14,18 @@ wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/laravel-
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/host.sh
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/laravel.sh
+wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/wordpress.sh
 
 cp apache-template /etc/apache2/sites-available/template-standard
 cp laravel-template /etc/apache2/sites-available/template-laravel
 
 cp host.sh /usr/bin/make-host
 cp laravel.sh /usr/bin/make-laravel
+cp wordpress.sh /usr/bin/make-wordpress
 
 chmod 777 /usr/bin/make-host
 chmod 777 /usr/bin/make-laravel
+chmod 777 /usr/bin/make-wordpress
 
 cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
 
