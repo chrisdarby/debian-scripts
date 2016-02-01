@@ -24,4 +24,6 @@ cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
+composer global require "laravel/installer"
+
 service apache2 restart
