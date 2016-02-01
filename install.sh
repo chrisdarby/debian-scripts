@@ -15,8 +15,9 @@ apt-get -y install git
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/laravel-template
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/host.sh
+wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/laravel.sh
 
-cp apache-template /etc/apache2/sites-available/template
+cp apache-template /etc/apache2/sites-available/template-standard
 cp laravel-template /etc/apache2/sites-available/template-laravel
 
 cp host.sh /usr/bin/make-host
