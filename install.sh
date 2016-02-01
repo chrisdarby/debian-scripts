@@ -27,9 +27,10 @@ chmod 777 /usr/bin/make-laravel
 cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
 
 curl -sS https://getcomposer.org/installer | php
+
 mv composer.phar /usr/local/bin/composer
+echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> ~/.bashrc
 
 composer global require "laravel/installer"
-echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> ~/.bashrc
 
 service apache2 restart
