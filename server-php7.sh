@@ -27,6 +27,5 @@ wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/host.sh
 cp apache-template /etc/apache2/sites-available/template-standard
 cp host.sh /usr/bin/makehost
 
-a2endmod rewrite
-
+a2enmod rewrite
 service apache2 restart
