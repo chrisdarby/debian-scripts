@@ -36,5 +36,10 @@ cp apache-template /etc/apache2/sites-available/template-standard
 cp apache-template-ssl /etc/apache2/sites-available/template-standard-ssl
 cp host.sh /usr/bin/makesite
 
+curl -sS https://getcomposer.org/installer | php
+
+mv composer.phar /usr/local/bin/composer
+echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> ~/.bashrc
+
 a2enmod rewrite
 service apache2 restart
