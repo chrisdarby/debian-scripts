@@ -1,0 +1,26 @@
+<VirtualHost 127.0.0.1:443>
+        ServerAdmin webmaster@#serverName#
+        ServerName #serverName#
+
+        DocumentRoot /home/#homeDir#/public_html
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /home/#homeDir#/public_html/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Require all granted
+                allow from all
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/#serverName#.error.log
+        LogLevel warn
+
+        CustomLog ${APACHE_LOG_DIR}/#serverName#.access.log combined
+        
+       SSLEngine on
+        SSLCertificateFile /path/to/site.crt
+        SSLCertificateKeyFile /path/to/site.key
+        SSLCertificateChainFile /path/to/site.ca-bundle
+</VirtualHost>
