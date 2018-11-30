@@ -1,5 +1,5 @@
 #!/bin/bash
-apt-get remove unscd
+apt-get -y remove unscd
 apt-get -y update
 apt-get -y install mysql-server
 apt-get -y install apache2
@@ -26,7 +26,7 @@ apt-get -y install php7.2-zip
 apt-get -y install php7.2-json
 apt-get -y install php7.2-imap
 
-apt-get install phpmyadmin
+apt-get -y install phpmyadmin
 
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template-ssl
@@ -35,6 +35,7 @@ wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/host.sh
 cp apache-template /etc/apache2/sites-available/template-standard
 cp apache-template-ssl /etc/apache2/sites-available/template-standard-ssl
 cp host.sh /usr/bin/makesite
+chmod 777 /usr/bin/makesite
 
 curl -sS https://getcomposer.org/installer | php
 
