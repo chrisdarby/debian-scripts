@@ -18,7 +18,8 @@ chmod 755 /home/$USER/public_html
 
 echo "$SERVERNAME" >  /home/$USER/public_html/index.html
 
-a2ensite /etc/apache2/sites-available/$USER.conf
+cd /etc/apache2/sites-available/
+a2ensite $USER.conf
 
 service apache2 restart
 echo "Complete!"
