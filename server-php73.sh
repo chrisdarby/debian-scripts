@@ -26,6 +26,8 @@ apt-get -y install php7.3-zip
 apt-get -y install php7.3-json
 apt-get -y install php7.3-imap
 
+apt-get -y install pure-ftpd
+
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/host.sh
 
