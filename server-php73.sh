@@ -1,7 +1,7 @@
 #!/bin/bash
 apt-get -y remove unscd
 apt-get -y update
-apt-get -y install mysql-server
+apt-get -y install mariadb-server
 apt-get -y install apache2
 apt-get -y install curl
 
