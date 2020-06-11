@@ -27,11 +27,11 @@ apt-get -y install php7.3-zip
 apt-get -y install php7.3-json
 apt-get -y install php7.3-imap
 
-wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template
+wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/template-crm
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/host.sh
 
-cp apache-template /etc/apache2/sites-available/template-standard
-cp host.sh /usr/bin/makehost
+cp template-crm /etc/apache2/sites-available/template-crm
+cp crm-host.sh /usr/bin/makehost
 chmod 777 /usr/bin/makehost
 
 curl -sS https://getcomposer.org/installer | php
