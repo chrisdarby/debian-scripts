@@ -28,7 +28,7 @@ apt-get -y install php7.3-json
 apt-get -y install php7.3-imap
 
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/template-crm
-wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/host.sh
+wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/crm-host.sh
 
 cp template-crm /etc/apache2/sites-available/template-crm
 cp crm-host.sh /usr/bin/makehost
