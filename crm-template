@@ -1,0 +1,65 @@
+<VirtualHost *:80>
+        ServerAdmin webmaster@#serverName#
+        ServerName #serverName#
+
+        DocumentRoot /home/crm/dev/public
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /home/crm/dev/public>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Require all granted
+                allow from all
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/dev.#serverName#.error.log
+        LogLevel warn
+
+        CustomLog ${APACHE_LOG_DIR}/dev.#serverName#.access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+        ServerAdmin webmaster@#serverName#
+        ServerName #serverName#
+
+        DocumentRoot /home/crm/staging/public
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /home/crm/staging/public>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Require all granted
+                allow from all
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/staging.#serverName#.error.log
+        LogLevel warn
+
+        CustomLog ${APACHE_LOG_DIR}/staging.#serverName#.access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+        ServerAdmin webmaster@#serverName#
+        ServerName #serverName#
+
+        DocumentRoot /home/crm/live/public
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /home/crm/live/public>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Require all granted
+                allow from all
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/live.#serverName#.error.log
+        LogLevel warn
+
+        CustomLog ${APACHE_LOG_DIR}/live.#serverName#.access.log combined
+</VirtualHost>
