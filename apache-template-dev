@@ -1,0 +1,66 @@
+<VirtualHost *:80>
+        ServerAdmin webmaster@#serverName#
+        ServerName #serverName#
+        ServerAlias www.#serverName#
+        
+        DocumentRoot /home/#homeDir#/www/public_html
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /home/#homeDir#/www/public_html/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Require all granted
+                allow from all
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/#serverName#.error.log
+        LogLevel warn
+
+        CustomLog ${APACHE_LOG_DIR}/#serverName#.access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+        ServerAdmin webmaster@#serverName#
+        ServerName staging.#serverName#
+        
+        DocumentRoot /home/#homeDir#/staging/public_html
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /home/#homeDir#/staging/public_html/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Require all granted
+                allow from all
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/staging.#serverName#.error.log
+        LogLevel warn
+
+        CustomLog ${APACHE_LOG_DIR}/staging.#serverName#.access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+        ServerAdmin webmaster@#serverName#
+        ServerName dev.#serverName#
+        
+        DocumentRoot /home/#homeDir#/dev/public_html
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /home/#homeDir#/dev/public_html/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Require all granted
+                allow from all
+        </Directory>
+
+        ErrorLog ${APACHE_LOG_DIR}/dev.#serverName#.error.log
+        LogLevel warn
+
+        CustomLog ${APACHE_LOG_DIR}/dev.#serverName#.access.log combined
+</VirtualHost>
