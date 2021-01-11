@@ -28,6 +28,7 @@ apt-get -y install php7.4-imap
 apt-get -y install postfix
 
 apt-get -y install pure-ftpd
+apt-get -y install snapd
 
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/host.sh
@@ -40,6 +41,11 @@ curl -sS https://getcomposer.org/installer | php
 
 mv composer.phar /usr/local/bin/composer
 echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> ~/.bashrc
+
+snap install core
+snap refresh core
+snap install --classic certbot
+ln -s /snap/bin/certbot /usr/bin/certbot
 
 a2enmod rewrite
 service apache2 restart
