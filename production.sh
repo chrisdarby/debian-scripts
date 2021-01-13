@@ -60,5 +60,8 @@ ufw allow https
 ufw allow ftp
 ufw enable
 
+apt-get -y install fail2ban
+cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+service fail2ban restart
 
 service apache2 restart
