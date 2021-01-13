@@ -1,7 +1,12 @@
 #!/bin/bash
 apt-get -y remove unscd
 apt-get -y update
+
 apt-get -y install mariadb-server
+mysql_install_db
+mysql_secure_installation
+
+
 apt-get -y install apache2
 apt-get -y install curl
 
@@ -25,15 +30,14 @@ apt-get -y install php7.4-xml
 apt-get -y install php7.4-zip
 apt-get -y install php7.4-json
 apt-get -y install php7.4-imap
-apt-get -y install postfix
 
 apt-get -y install snapd
 
-wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template-dev
-wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/host-dev.sh
+wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template
+wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/host.sh
 
-cp apache-template-dev /etc/apache2/sites-available/template-standard
-cp host-dev.sh /usr/bin/makehost
+cp apache-template /etc/apache2/sites-available/template-standard
+cp host.sh /usr/bin/makehost
 chmod 777 /usr/bin/makehost
 
 curl -sS https://getcomposer.org/installer | php
@@ -47,4 +51,6 @@ snap install --classic certbot
 ln -s /snap/bin/certbot /usr/bin/certbot
 
 a2enmod rewrite
+a2enmod ssl
+
 service apache2 restart
