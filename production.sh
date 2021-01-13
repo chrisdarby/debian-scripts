@@ -6,7 +6,6 @@ apt-get -y install mariadb-server
 mysql_install_db
 mysql_secure_installation
 
-
 apt-get -y install apache2
 apt-get -y install curl
 
@@ -24,13 +23,14 @@ apt-get -y install libapache2-mod-php7.4
 apt-get -y install php7.4-common
 apt-get -y install php7.4-curl
 apt-get -y install php7.4-gd
+apt-get -y install php7.4-imagick
 apt-get -y install php7.4-mbstring
 apt-get -y install php7.4-mysql
 apt-get -y install php7.4-xml
 apt-get -y install php7.4-zip
 apt-get -y install php7.4-json
 apt-get -y install php7.4-imap
-
+apt-get -y install pure-ftpd
 apt-get -y install snapd
 
 wget https://raw.githubusercontent.com/chrisdarby/debian-scripts/master/apache-template
@@ -52,5 +52,13 @@ ln -s /snap/bin/certbot /usr/bin/certbot
 
 a2enmod rewrite
 a2enmod ssl
+
+apt-get -y install ufw
+ufw allow ssh
+ufw allow http
+ufw allow https
+ufw allow ftp
+ufw enable
+
 
 service apache2 restart
