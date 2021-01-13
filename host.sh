@@ -13,10 +13,10 @@ sed -i "s/$OLDHOME/$USER/g" /etc/apache2/sites-available/$USER.conf
 adduser $USER
 mkdir -p /home/$USER/public_html
 
+touch /home/$USER/public_html/index.php
+
 chown -R $USER:$USER /home/$USER/public_html
 chmod 755 /home/$USER/public_html
-
-echo "$SERVERNAME" >  /home/$USER/public_html/index.html
 
 cd /etc/apache2/sites-available/
 a2ensite $USER.conf
