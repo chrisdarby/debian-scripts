@@ -1,0 +1,44 @@
+<VirtualHost *:80>
+        ServerAdmin webmaster@#serverName#
+        ServerName #serverName#
+
+        DocumentRoot /home/#homeDir#/public_html
+
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+
+        <Directory /home/#homeDir#/public_html/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Require all granted
+                allow from all
+        </Directory>
+
+        CacheQuickHandler off
+        CacheLock on
+        CacheLockPath /tmp/mod_cache-lock
+        CacheLockMaxAge 5
+        CacheIgnoreHeaders Set-Cookie
+
+        <Location />
+            CacheEnable disk
+            CacheHeader on
+            CacheDefaultExpire 800
+            CacheMaxExpire 64000
+            CacheIgnoreNoLastMod On
+            ExpiresActive on
+            ExpiresDefault A300
+        </Location>
+
+        <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+            Header set Cache-Control "max-age=63072000, public"
+            ExpiresDefault "access plus 1 week"
+        </FilesMatch>
+
+        ErrorLog ${APACHE_LOG_DIR}/#serverName#.error.log
+        LogLevel warn
+
+        CustomLog ${APACHE_LOG_DIR}/#serverName#.access.log combined
+</VirtualHost>
